@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/JoHo87/apiLib#readme",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/joi": "^17.2.3",
@@ -38,7 +39,9 @@
     "typescript": "^4.7.2"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "celebrate": "^15.0.1",
+    "class-transformer": "^0.5.1",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",

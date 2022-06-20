@@ -1,6 +1,6 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { MigrationInterface, QueryRunner, Table, TableForeignKey } from 'typeorm';
 
-export class CreateBooks1653874442446 implements MigrationInterface {
+export class CreateBooks1655677227096 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
     await queryRunner.createTable(
@@ -50,6 +50,14 @@ export class CreateBooks1653874442446 implements MigrationInterface {
             default: 'now()',
           },
         ],
+        foreignKeys: [{
+          name: 'UserCpfBook',
+          referencedTableName: 'users',
+          referencedColumnNames: ['cpf'],
+          columnNames: ['user_cpf'],
+          onDelete: 'SET NULL',
+          onUpdate: 'CASCADE',
+        }]
       }),
     );
   }
